@@ -43,7 +43,7 @@ See helpers/anue_labels.py
 
 ### Generate Label Masks (for training/evaluation) (Semantic/Instance/Panoptic Segmentation)
 ```bash
-python preperation/createLabels.py --datadir $ANUE --id-type $IDTYPE --color [True|False] --instance [True|False] --num-workers $C
+python -m preperation.createLabels --datadir $ANUE --id-type $IDTYPE  --color [True|False] --instance [True|False] --num-workers $C
 ```
 
 - ANUE is the path to the AutoNUE dataset

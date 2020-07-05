@@ -33,8 +33,8 @@
 #
 
 # python imports
-from anue_labels import labels, name2label
-from annotation import Annotation
+from helpers.anue_labels import labels, name2label
+from helpers.annotation import Annotation
 import os
 import sys
 import getopt

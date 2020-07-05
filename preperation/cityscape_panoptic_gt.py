@@ -12,7 +12,11 @@ import glob
 import numpy as np
 import PIL.Image as Image
 from multiprocessing import Pool
-from panopticapi.utils import IdGenerator, save_json
+
+try:
+    from panopticapi.utils import IdGenerator, save_json
+except:
+    print('No module panopticapi')
 
 try:
     # set up path for cityscapes scripts

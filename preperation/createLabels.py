@@ -6,16 +6,16 @@ from __future__ import print_function
 import os
 import glob
 import sys
-from scipy.misc import imread, imsave
+#from scipy.misc import imread, imsave
 import numpy as np
 from numpngw import write_png
 
-from json2labelImg import json2labelImg
-from json2instanceImg import json2instanceImg
+from .json2labelImg import json2labelImg
+from .json2instanceImg import json2instanceImg
 
 
 from tqdm import tqdm
-from cityscape_panoptic_gt import panoptic_converter
+from .cityscape_panoptic_gt import panoptic_converter
 from argparse import ArgumentParser
 import os
 
@@ -87,6 +87,7 @@ def main(args):
     searchFine = os.path.join(args.datadir, "gtFine",
                               "*", "*", "*_gt*_polygons.json")
 
+
     # search files
     filesFine = glob.glob(searchFine)
     filesFine.sort()
@@ -94,8 +95,8 @@ def main(args):
     files = filesFine
 
     if not files:
-        tqdm.writeError(
-            "Did not find any files. Please consult the README.")
+        print(
+            f"Did not find any files at {searchFine}. Please consult the README.")
 
     # a bit verbose
     tqdm.write(
